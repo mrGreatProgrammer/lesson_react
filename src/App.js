@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+// import List from './components/List/List';
+import Posts from './components/Posts/Posts';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Route,
+//   Link,
+//   createRoutesFromElements
+// } from "react-router-dom";
+// import {useSelector} from 'react-redux';
+import Comments from './pages/Comments/Comments';
+import Logo from "./components/ui/Logo/Logo";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
+  // const {currentPostId} = useSelector(state=>state.app);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Link to="/"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      {/* </Link> */}
+        <Router >
+
+        {/* <Posts /> */}
+
+          <Logo />
+        <div className="center" >
+          <Routes>
+        <Route path="/" element={<Posts />} />
+        <Route path={`/posts:id/comments`} element={<Comments />} /> 
+        <Route path={`*`} element={<NotFound />}  /> 
+          </Routes>
+          {/* <List /> */}
+        </div>
+        </Router>
     </div>
   );
 }
