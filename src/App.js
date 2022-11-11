@@ -13,6 +13,7 @@ import Posts from './components/Posts/Posts';
 import Comments from './pages/Comments/Comments';
 import Logo from "./components/ui/Logo/Logo";
 import NotFound from "./pages/NotFound/NotFound";
+import Header from "./components/Header/Header";
 
 function App() {
   // const {currentPostId} = useSelector(state=>state.app);
@@ -25,8 +26,8 @@ function App() {
         <Router >
 
         {/* <Posts /> */}
-
-          <Logo />
+        <Header />
+          {/* <Logo /> */}
         <div className="center" >
           <Routes>
         <Route path="/" element={<Posts />} />

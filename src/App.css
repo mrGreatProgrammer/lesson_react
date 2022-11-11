@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 10vmin;
   pointer-events: none;
@@ -22,4 +18,12 @@ li{
   padding: 8px 4px;
   min-height: 25px;
   border: 1px solid #eee;
+}
+.container{
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.active{
+  color: grey;
 }
