@@ -1,14 +1,7 @@
-import React from "react";
+import React from 'react';
 import { NavLink } from "react-router-dom";
 
-let links = [
-  { id: 1, linkTxt: "home", linkHref: "/" },
-  { id: 2, linkTxt: "friends", linkHref: "/friends" },
-  { id: 3, linkTxt: "profile", linkHref: "/profile" },
-  { id: 4, linkTxt: "usecalback", linkHref: "/whatsreact" },
-];
-
-const HeaderNavBar = () => {
+const NavBar = ({links}) => {
   return (
     <div>
       <nav className="header__nav_bar flex space-x-3">
@@ -23,7 +16,7 @@ const HeaderNavBar = () => {
         ))}
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default HeaderNavBar;
+export default NavBar

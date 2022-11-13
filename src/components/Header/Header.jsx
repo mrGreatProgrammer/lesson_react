@@ -1,8 +1,12 @@
 import React from "react";
+import Counter from "../Counter/Counter";
+import SubmitBtn from "../forms/ui/SubmitBtn/SubmitBtn";
 import HeaderNavBar from "../navs/HeaderNavBar/HeaderNavBar";
 import Logo from "../ui/Logo/Logo";
 
 const Header = () => {
+  const [show, setShow] = React.useState(true);
+
   return (
     <header>
       <div className="container">
@@ -10,6 +14,15 @@ const Header = () => {
           <Logo />
           <HeaderNavBar />
         </div>
+        <SubmitBtn
+        disabled={false}
+        txtBtn={"hide"}
+        onClick={() => {
+          setShow(s=>!s)
+        }}
+      />
+        {show &&
+          <Counter />}
       </div>
     </header>
   );
