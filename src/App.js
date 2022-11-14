@@ -18,6 +18,7 @@ import WhatIsReact from "./components/WhatIsReact/WhatIsReact";
 import SeeUseMemo from "./components/WhatIsReact/SeeUseMemo";
 import SeeUseImparativeHandle from "./components/WhatIsReact/SeeUseImparativeHandle";
 import SeeUseCallback from "./components/WhatIsReact/SeeUseCallback";
+import SearchComments from "./components/Searchers/SearchComments/SearchComments";
 // import { routes } from "./pages/Routes/Routes";
 
 // export const routes = createBrowserRouter([
@@ -41,11 +42,16 @@ function App() {
         <Routes>
         <Route path="/" element={<Posts />}  />
         <Route path={`/posts:id/comments`} element={<Comments />} /> 
-        <Route path={`/whatsreact/`} element={<WhatIsReact />} children={
+        <Route path={`/whatsreact/`} element={<WhatIsReact />} 
+        // children={
           
-          <Route path={`/whatsreact/useMemo`} element={<h1 >hello</h1>} />
+        //   <Route path={`/whatsreact/useMemo`} element={<h1 >hello</h1>} />
           
-        } />
+        // }
+         />
+         
+        <Route path={`/whatsreact/useMemo`} element={<h1 >hello</h1>} />
+        <Route path={`/search_comments`} element={<SearchComments />} />
         <Route path={`*`} element={<NotFound />}  />
         </Routes>
         </div>

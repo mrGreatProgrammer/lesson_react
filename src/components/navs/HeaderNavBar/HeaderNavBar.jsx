@@ -6,6 +6,7 @@ let links = [
   { id: 2, linkTxt: "friends", linkHref: "/friends" },
   { id: 3, linkTxt: "profile", linkHref: "/profile" },
   { id: 4, linkTxt: "usecalback", linkHref: "/whatsreact" },
+  { id: 5, linkTxt: "search_comments", linkHref: "/search_comments" },
 ];
 
 const HeaderNavBar = () => {

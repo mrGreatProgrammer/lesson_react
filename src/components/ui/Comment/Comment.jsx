@@ -6,8 +6,8 @@ const Comment = ({ commentTitle, commentBody, email }) => {
   return (
     <div className="comment">
       <div className="comment__header">
-        <div className="comment__email">{email}</div>
-        <div className="comment__title">
+        <div className="comment__email text-xs mb-1 text-slate-300">{email}</div>
+        <div className="comment__title text-lg my-2">
           <h4>{commentTitle}</h4>
         </div>
       </div>
