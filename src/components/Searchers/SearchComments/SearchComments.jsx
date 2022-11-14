@@ -29,7 +29,7 @@ const SearchComments = () => {
     );
   } else if (isFetching) {
     <div className="loader__container">
-      <h5 className="loader">Loading ...</h5>
+      <h5 className="loader">Loading ...</h5> 
     </div>;
   } else if (data) {
     return (
