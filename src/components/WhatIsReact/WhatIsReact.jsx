@@ -1,15 +1,14 @@
 import React, { useCallback } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import NavBar from "../navs/NavBar/NavBar";
-import SeeUseCallback from "./SeeUseCallback";
-import SeeUseImparativeHandle from "./SeeUseImparativeHandle";
-import SeeUseMemo from "./SeeUseMemo";
+// import SeeUseCallback from "./SeeUseCallback";
+// import SeeUseImparativeHandle from "./SeeUseImparativeHandle";
+// import SeeUseMemo from "./SeeUseMemo";
 
 let links = [
   { id: 1, linkTxt: "useCallback", linkHref: "/whatsreact/useCallback" },
   { id: 2, linkTxt: "useMemo", linkHref: "/whatsreact/useMemo" },
   { id: 3, linkTxt: "useImparativeHandle", linkHref: "/whatsreact/useImparativeHandle" },
-  // { id: 4, linkTxt: "usecalback", linkHref: "/usecallback" },
 ];
 
 const WhatIsReact = () => {
@@ -18,6 +17,7 @@ const WhatIsReact = () => {
       <h5>WhatIsReact ?</h5>
       <NavBar links={links} />
       <div>
+        <Outlet />
         {/* <Router> */}
           {/* <Routes>
             <Route

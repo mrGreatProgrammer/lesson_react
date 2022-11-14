@@ -13,7 +13,7 @@ const SearchComments = () => {
 
   React.useEffect(() => {
     setComments(filterBySearch(data, search));
-  }, [search]);
+  }, [search, data]);
 
   function handleSearch(event) {
     startTransition(() => {

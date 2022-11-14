@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 let links = [
   { id: 1, linkTxt: "home", linkHref: "/" },
-  { id: 2, linkTxt: "friends", linkHref: "/friends" },
+  { id: 2, linkTxt: "friends", linkHref: "/users" },
   { id: 3, linkTxt: "profile", linkHref: "/profile" },
   { id: 4, linkTxt: "usecalback", linkHref: "/whatsreact" },
   { id: 5, linkTxt: "search_comments", linkHref: "/search_comments" },

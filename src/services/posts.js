@@ -8,6 +8,9 @@ export const postsApi = createApi({
     getPostsByLimit: builder.query({
       query: (page) => `posts?_limit=25&_page=${page}`,
     }),
+    getPostsByUserId: builder.query({
+      query: ({page, userId}) => `posts?_limit=25&_page=${page}&userId=${userId}`,
+    }),
     getCommentsByPostId: builder.query({
       query: (postId) => `posts/${postId}/comments`,
     }),
@@ -16,4 +19,4 @@ export const postsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPostsByLimitQuery, useGetCommentsByPostIdQuery } = postsApi
+export const { useGetPostsByLimitQuery, useGetCommentsByPostIdQuery, useGetPostsByUserIdQuery } = postsApi

@@ -9,7 +9,7 @@ const Posts = () => {
   const { data, error, isLoading, refetch, isFetching } =
     useGetPostsByLimitQuery(page);
 
-  console.log(data);
+  // console.log(data);
 
   function toPrevPage() {
     setPage((page) => page - 1);

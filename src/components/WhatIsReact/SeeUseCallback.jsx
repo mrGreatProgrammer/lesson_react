@@ -14,7 +14,7 @@ const SeeUseCallback = () => {
 
       {visible && (
         <div className="m-2 flex flex-col items-center" >
-          <div class="arrow-up"></div>
+          <div className="arrow-up"></div>
           <div className="w-24 border p-2 rounded text-center">Nihil, ut.</div>
         </div>
       )}

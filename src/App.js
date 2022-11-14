@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 // import List from './components/List/List';
 // import {
@@ -17,14 +18,20 @@ import SeeUseMemo from "./components/WhatIsReact/SeeUseMemo";
 import SeeUseImparativeHandle from "./components/WhatIsReact/SeeUseImparativeHandle";
 import SeeUseCallback from "./components/WhatIsReact/SeeUseCallback";
 import SearchComments from "./components/Searchers/SearchComments/SearchComments";
+import SearchUsers from "./components/Searchers/SearchUsers/SearchUsers";
+// import Users from "./pages/Users/Users";
+import Friends from "./components/Friends/Friends";
 // import { routes } from "./pages/Routes/Routes";
 
 // import Posts from "./components/Posts/Posts";
 // import Comments from "./pages/Comments/Comments";
 // import NotFound from "./pages/NotFound/NotFound";
+// import CurrentUser from "./components/CurrentUser/CurrentUser";
 const Posts = React.lazy(() => import("./components/Posts/Posts"));
 const Comments = React.lazy(() => import("./pages/Comments/Comments"));
 const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
+const Users =  React.lazy(()=>import("./pages/Users/Users"));
+const CurrentUser = React.lazy(()=>import("./components/CurrentUser/CurrentUser"));
 
 // export const routes = createBrowserRouter([
 //   {
@@ -41,49 +48,75 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <div className="center">
-          <Routes>
+      {/* <Router> */}
+      <Header />
+      <div className="center">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                <Posts />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                <Users />
+              </React.Suspense>
+            }
+          >
+            <Route path={`/users/search`} element={<SearchUsers />} />
+            <Route path={`/users/my_friends`} element={<Friends />} />
+          </Route>
+          <Route
+            path="/users/:userId"
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                <CurrentUser />
+              </React.Suspense>
+            }
+          ></Route>
+          <Route
+            path={`/posts:id/comments`}
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                <Comments />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path={`/whatsreact`}
+            element={<WhatIsReact />}
+            // children={
+            //   <Route path={`/whatsreact/hello`} element={<h1 >hello</h1>} />
+            // }
+          >
+            <Route path={`/whatsreact/hello`} element={<h1>hello</h1>} />
             <Route
-              path="/"
-              element={
-                <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
-                  <Posts />
-                </React.Suspense>
-              }
+              path={`/whatsreact/useCallback`}
+              element={<SeeUseCallback />}
             />
+            <Route path={`/whatsreact/useMemo`} element={<SeeUseMemo />} />
             <Route
-              path={`/posts:id/comments`}
-              element={
-                <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
-                  <Comments />
-                </React.Suspense>
-              }
+              path={`/whatsreact/useImparativeHandle`}
+              element={<SeeUseImparativeHandle />}
             />
-            <Route
-              path={`/whatsreact/`}
-              element={<WhatIsReact />}
-              // children={
-
-              //   <Route path={`/whatsreact/useMemo`} element={<h1 >hello</h1>} />
-
-              // }
-            />
-
-            <Route path={`/whatsreact/useMemo`} element={<h1>hello</h1>} />
-            <Route path={`/search_comments`} element={<SearchComments />} />
-            <Route
-              path={`*`}
-              element={
-                <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
-                  <NotFound />
-                </React.Suspense>
-              }
-            />
-          </Routes>
-        </div>
-      </Router>
+          </Route>
+          <Route path={`/search_comments`} element={<SearchComments />} />
+          <Route
+            path={`*`}
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                <NotFound />
+              </React.Suspense>
+            }
+          />
+        </Routes>
+      </div>
+      {/* </Router> */}
       {/* <Header /> */}
       {/* <RouterProvider router={routes} /> */}
     </div>
