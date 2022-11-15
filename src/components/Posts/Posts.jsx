@@ -1,6 +1,7 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { ThreeCircleLoader } from "../../imgs/Loadings";
-import { useGetPostsByLimitQuery } from "../../services/posts";
+import { useGetCommentsByPostIdQuery, useGetPostsByLimitQuery } from "../../services/posts";
 import PaginationBtns from "../ui/PaginationBtns/PaginationBtns";
 import Post from "./Post/Post";
 
@@ -9,7 +10,12 @@ const Posts = () => {
   const { data, error, isLoading, refetch, isFetching } =
     useGetPostsByLimitQuery(page);
 
-  // console.log(data);
+
+
+  const location = useLocation();
+
+  console.log("location", location);
+
 
   function toPrevPage() {
     setPage((page) => page - 1);
@@ -26,7 +32,7 @@ const Posts = () => {
       <div className="posts__container">
         {error ? (
           <>Oh no, there was an error</>
-        ) : isFetching ? (
+        ) : isLoading || isFetching ? (
           <ThreeCircleLoader width={"75"} height={"75"} />
         ) : data === null || !data?.length ? (
             <div className="notFound__msg">not found</div>

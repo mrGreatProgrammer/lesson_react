@@ -1,6 +1,6 @@
 import React from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 // import List from './components/List/List';
 // import {
@@ -21,6 +21,9 @@ import SearchComments from "./components/Searchers/SearchComments/SearchComments
 import SearchUsers from "./components/Searchers/SearchUsers/SearchUsers";
 // import Users from "./pages/Users/Users";
 import Friends from "./components/Friends/Friends";
+import About from "./pages/About/About";
+import RequireAuth from "./hoc/RequireAuth";
+// import CreatePost from "./pages/CreatePost/CreatePost";
 // import { routes } from "./pages/Routes/Routes";
 
 // import Posts from "./components/Posts/Posts";
@@ -32,6 +35,8 @@ const Comments = React.lazy(() => import("./pages/Comments/Comments"));
 const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
 const Users =  React.lazy(()=>import("./pages/Users/Users"));
 const CurrentUser = React.lazy(()=>import("./components/CurrentUser/CurrentUser"));
+const CreatePost = React.lazy(import("./pages/CreatePost/CreatePost"));
+const MyProfile =  React.lazy(()=>import('./pages/MyProfile/MyProfile'));
 
 // export const routes = createBrowserRouter([
 //   {
@@ -59,6 +64,34 @@ function App() {
                 <Posts />
               </React.Suspense>
             }
+          />
+          <Route
+            path="/post_create"
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                {/* <RequireAuth > */}
+                <CreatePost />
+                {/* </RequireAuth> */}
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <React.Suspense fallback={<h1>LLLLoooodddiiinngg ...</h1>}>
+                {/* <RequireAuth > */}
+                <MyProfile />
+                {/* </RequireAuth> */}
+              </React.Suspense>
+            }
+          />
+          <Route
+          path="about"
+          element={<About />}
+          />
+          <Route
+          path="about-us"
+          element={<Navigate to="/about" replace />}
           />
           <Route
             path="/users"

@@ -14,7 +14,7 @@ export const usersApi = createApi({
       query: () => `users`,
     }),
     searchUsers: builder.query({
-      query: ({ search }) => `users?username=${search}`,
+      query: (search) => `users${search ? `?username=${search}` : ""}`,
     }),
     getUsersByPostId: builder.query({
       query: (postId) => `posts/${postId}/users`,
@@ -22,7 +22,6 @@ export const usersApi = createApi({
     getUsersById: builder.query({
       query: (userId) => `users?id=${userId}`,
     }),
-
   }),
 });
 
@@ -33,5 +32,5 @@ export const {
   useGetUsersByPostIdQuery,
   useSearchUsersQuery,
   useGetAllUsersQuery,
-  useGetUsersByIdQuery
+  useGetUsersByIdQuery,
 } = usersApi;

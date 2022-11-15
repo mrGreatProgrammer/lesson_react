@@ -7,8 +7,11 @@ import {
   useNavigation,
   useNavigate,
 } from "react-router-dom";
-import Comment from "../../components/ui/Comment/Comment";
 import { DotsLoader } from "../../imgs/Loadings";
+// import Comment from "../../components/ui/Comment/Comment";
+// import GoBackBtn from "../../components/forms/ui/GoBackBtn/GoBackBtn";
+const Comment = React.lazy(()=>import("../../components/ui/Comment/Comment"));
+const GoBackBtn = React.lazy(()=>import("../../components/forms/ui/GoBackBtn/GoBackBtn"));
 
 const Comments = () => {
   const location = useLocation();
@@ -28,7 +31,7 @@ const Comments = () => {
   return (
     <div>
       <h1>Comments</h1>
-
+      <GoBackBtn />
       {error ?
       <div className="err__msg">
         <h5 className="err__txt">Error</h5>
