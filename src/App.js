@@ -86,9 +86,12 @@ function App() {
             }
           />
           <Route
-          path="about"
+          path="about/*"
           element={<About />}
-          />
+          >
+            {/* <Route path="contacts" element={<h3 className="text-base font-bold" >Contacts</h3>} />
+        <Route path="team" element={<h3 className="text-base font-bold" >Our team</h3>} /> */}
+          </Route>
           <Route
           path="about-us"
           element={<Navigate to="/about" replace />}

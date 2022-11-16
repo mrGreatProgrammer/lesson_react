@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 const setActive = ({ isActive }) => (isActive ? "active-link" : ""); 
 
 const NavBar = ({ links }) => {
+
+
   return (
     <div>
       <nav className="header__nav_bar flex space-x-3">
