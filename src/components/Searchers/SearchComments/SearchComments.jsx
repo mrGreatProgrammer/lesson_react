@@ -1,5 +1,4 @@
 import React from "react";
-// import { defer } from "react-router-dom";
 import { useGetAllCommentsQuery } from "../../../services/comments";
 import Comment from "../../ui/Comment/Comment";
 
@@ -57,13 +56,3 @@ const SearchComments = () => {
 };
 
 export default SearchComments;
-
-// async function getComments(){
-  
-// }
-
-// const commentsLoader = async () => {
-// return defer({posts})
-// }
-
-// export {SearchComments, }
