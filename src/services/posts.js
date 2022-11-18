@@ -14,6 +14,16 @@ export const postsApi = createApi({
     getCommentsByPostId: builder.query({
       query: (postId) => `posts/${postId}/comments`,
     }),
+    addPost: builder.query({
+      query: (postImg, postTitle, postBody,  ) => ({url: `posts`,
+    method: "POST",
+    body: {
+      postImg,
+      postTitle,
+      postBody,
+    }
+    }),
+    })
   }),
 })
 

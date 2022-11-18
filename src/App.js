@@ -22,7 +22,7 @@ import SearchUsers from "./components/Searchers/SearchUsers/SearchUsers";
 // import Users from "./pages/Users/Users";
 import Friends from "./components/Friends/Friends";
 import About from "./pages/About/About";
-import RequireAuth from "./hoc/RequireAuth";
+// import RequireAuth from "./hoc/RequireAuth";
 // import CreatePost from "./pages/CreatePost/CreatePost";
 // import { routes } from "./pages/Routes/Routes";
 

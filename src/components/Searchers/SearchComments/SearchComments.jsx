@@ -28,9 +28,11 @@ const SearchComments = () => {
       </div>
     );
   } else if (isFetching) {
-    <div className="loader__container">
-      <h5 className="loader">Loading ...</h5> 
-    </div>;
+    return (
+      <div className="loader__container">
+        <h5 className="loader">Loading ...</h5>
+      </div>
+    );
   } else if (data) {
     return (
       <div>
