@@ -7,6 +7,7 @@ import { commentsApi } from "../services/comments";
 // import { pokemonApi } from './services/pokemon'
 import app from "./app";
 import { usersApi } from "../services/users";
+import { todosApi } from "../services/todos";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     [postsApi.reducerPath]: postsApi.reducer,
     [commentsApi.reducerPath]: commentsApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
+    [todosApi.reducerPath]: todosApi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -25,6 +27,7 @@ export const store = configureStore({
       postsApi.middleware,
       commentsApi.middleware,
       usersApi.middleware,
+      todosApi.middleware,
     ]),
   // getDefaultMiddleware().concat(postsApi.middleware),
 });

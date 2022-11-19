@@ -1,0 +1,10 @@
+.todos__container{
+    
+}
+
+.todo__date_container{
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    justify-content: flex-end;
+}
