@@ -5,16 +5,22 @@ import CreateTodo from "./CreateTodo/CreateTodo";
 import TodoItem from "./TodoItem";
 import "./Todos.css";
 
-// let a = "<i>hello</i>"
+let a = "<i>hello</i>";
+
+// function abcFunc(c){
+
+//   return c
+// }
 
 const Todos = () => {
-  const { data, isFetching, isLoading, isError, refetch } =
+  const { data, isLoading, isError, isFetching } =
     useGetTodosByLimitQuery();
 
   return (
     <div className="todos__container  w-[650px]">
-      <CreateTodo refetchTodos={refetch} />
-      {isFetching || isLoading ? (
+      <CreateTodo  />
+      {isFetching && <ThreeCircleLoader /> }
+      {isLoading ? (
         <ThreeCircleLoader />
       ) : isError ? (
         <div className="err__msg__container">
@@ -36,6 +42,10 @@ const Todos = () => {
       )}
 
         {/* {new DOMParser().parser.parseFromString(a, "application/xml")} */}
+        {/* {abcFunc(a)} */}
+        <div dangerouslySetInnerHTML={{__html: a}} >
+
+        </div>
     </div>
   );
 };

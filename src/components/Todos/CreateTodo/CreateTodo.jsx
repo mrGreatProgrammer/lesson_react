@@ -1,22 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import {
   useAddTodoMutation,
 //   useGetTodosByLimitQuery,
 } from "../../../services/todos";
 
-const CreateTodo = ({refetchTodos}) => {
+const CreateTodo = () => {
   const [todoTitle, setTodoTitle] = React.useState("");
   const [todoDesc, setTodoDesc] = React.useState("");
   // const dispatch = useDispatch();
-  const [addTodo, { isLoading }] = useAddTodoMutation();
+  const [addTodo, { isLoading, isSuccess }] = useAddTodoMutation();
 //   const { data, isFetching, isError } = useGetTodosByLimitQuery(1);
 
   function addTodoSubmit(event) {
     event.preventDefault();
     // dispatch(useAddTodoMutation(todoTitle, todoDesc))
-    addTodo(todoTitle, todoDesc);
-    refetchTodos();
+    addTodo({todoTitle, todoDesc});
   }
 
   return (
