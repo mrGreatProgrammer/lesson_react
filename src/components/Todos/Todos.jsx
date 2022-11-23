@@ -1,9 +1,11 @@
 import React from "react";
 import { ThreeCircleLoader } from "../../imgs/Loadings";
+import { regA } from "../../regexps/lessonOne";
 import { useGetTodosByLimitQuery } from "../../services/todos";
 import CreateTodo from "./CreateTodo/CreateTodo";
 import TodoItem from "./TodoItem";
 import "./Todos.css";
+// const TodoItem = React.lazy(import("./TodoItem"));
 
 let a = "<i>hello</i>";
 
@@ -15,6 +17,10 @@ let a = "<i>hello</i>";
 const Todos = () => {
   const { data, isLoading, isError, isFetching } =
     useGetTodosByLimitQuery();
+    
+    React.useEffect(()=>{
+      regA()
+    },[])
 
   return (
     <div className="todos__container  w-[650px]">
@@ -29,12 +35,14 @@ const Todos = () => {
       ) : data ? (
         <div className="todos__items__container my-10 flex flex-col-reverse">
           {data.map((e) => (
+            <div key={e.id} >
             <TodoItem
               createdAt={e.createdAt}
               title={e.title}
               desc={e.desc}
               icon={e.icon}
-            />
+              />
+              </div>
           ))}
         </div>
       ) : (
