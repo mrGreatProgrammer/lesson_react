@@ -16,6 +16,8 @@ const CreateTodo = () => {
     event.preventDefault();
     // dispatch(useAddTodoMutation(todoTitle, todoDesc))
     addTodo({todoTitle, todoDesc});
+    setTodoTitle("");
+    setTodoDesc("")
   }
 
   return (

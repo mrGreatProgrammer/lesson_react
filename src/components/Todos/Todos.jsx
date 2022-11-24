@@ -1,6 +1,8 @@
 import React from "react";
 import { ThreeCircleLoader } from "../../imgs/Loadings";
-import { regA } from "../../regexps/lessonOne";
+import { regExpLessonThree } from "../../regexps/lessonThree";
+// import { regExpLessonTwo } from "../../regexps/lessonTwo";
+// import { regExpLessonOne } from "../../regexps/lessonOne";
 import { useGetTodosByLimitQuery } from "../../services/todos";
 import CreateTodo from "./CreateTodo/CreateTodo";
 import TodoItem from "./TodoItem";
@@ -15,17 +17,19 @@ let a = "<i>hello</i>";
 // }
 
 const Todos = () => {
-  const { data, isLoading, isError, isFetching } =
+  const { data, isLoading, isError } =
     useGetTodosByLimitQuery();
     
     React.useEffect(()=>{
-      regA()
+      // regExpLessonOne();
+      // regExpLessonTwo();
+      regExpLessonThree();
     },[])
 
   return (
     <div className="todos__container  w-[650px]">
       <CreateTodo  />
-      {isFetching && <ThreeCircleLoader /> }
+      {/* {isFetching && <ThreeCircleLoader /> } */}
       {isLoading ? (
         <ThreeCircleLoader />
       ) : isError ? (

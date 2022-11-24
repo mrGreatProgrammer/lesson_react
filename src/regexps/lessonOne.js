@@ -23,8 +23,8 @@ const str = "абвгдеёжзклмнопрстуфхчцшщъыьэюя"
 
 const result = str.match(regexp)
 
-export function regA() {
-    console.log(result)
+export function regExpLessonOne() {
+    console.log(result);
 }
 
 // . - любой символ, кроме \n
