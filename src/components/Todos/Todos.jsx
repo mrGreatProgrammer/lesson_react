@@ -1,6 +1,8 @@
 import React from "react";
 import { ThreeCircleLoader } from "../../imgs/Loadings";
-import { regExpLessonThree } from "../../regexps/lessonThree";
+import { regExpLessonFive } from "../../regexps/lessonFive";
+// import { regExpLessonFour } from "../../regexps/lessonFour";
+// import { regExpLessonThree } from "../../regexps/lessonThree";
 // import { regExpLessonTwo } from "../../regexps/lessonTwo";
 // import { regExpLessonOne } from "../../regexps/lessonOne";
 import { useGetTodosByLimitQuery } from "../../services/todos";
@@ -23,7 +25,9 @@ const Todos = () => {
     React.useEffect(()=>{
       // regExpLessonOne();
       // regExpLessonTwo();
-      regExpLessonThree();
+      // regExpLessonThree();
+      // regExpLessonFour();
+      regExpLessonFive();
     },[])
 
   return (
