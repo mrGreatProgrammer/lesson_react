@@ -8,4 +8,4 @@ const SubmitBtn = React.memo(({txtBtn, onClick, disabled}) => {
   )
 })
 
-export default SubmitBtn
+export default SubmitBtn;

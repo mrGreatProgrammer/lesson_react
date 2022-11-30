@@ -5,6 +5,10 @@ import ChevronRight from "./Arrows/ChevronRight/ChevronRight";
 import GoBackIcon from "./Arrows/GoBackIcon";
 import TrashIcon from "./TrashIcon";
 import PencilIcon from "./PencilIcon";
+import DoneIcon from './DoneIcon';
+import ErrorIcon from './ErrorIcon';
+import WarningIcon from './WarningIcon';
+import InfoIcon from './InfoIcon';
 
 export {
   CommentIcon,
@@ -14,4 +18,8 @@ export {
   GoBackIcon,
   TrashIcon,
   PencilIcon,
+  DoneIcon,
+  ErrorIcon,
+  WarningIcon,
+  InfoIcon
 };

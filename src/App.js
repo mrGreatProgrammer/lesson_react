@@ -36,7 +36,7 @@ const Comments = React.lazy(() => import("./pages/Comments/Comments"));
 const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
 const Users =  React.lazy(()=>import("./pages/Users/Users"));
 const CurrentUser = React.lazy(()=>import("./components/CurrentUser/CurrentUser"));
-const CreatePost = React.lazy(import("./pages/CreatePost/CreatePost"));
+const CreatePost = React.lazy(()=>import("./pages/CreatePost/CreatePost"));
 const MyProfile =  React.lazy(()=>import('./pages/MyProfile/MyProfile'));
 
 // export const routes = createBrowserRouter([

@@ -1,0 +1,38 @@
+.confirm__modal {
+  width: 90vw;
+  max-width: 20rem;
+
+  padding: 1em;
+
+  background: #fff;
+  color: #656e77;
+  box-shadow: 0 0 5px rgba(101, 110, 119, 0.2);
+  border: 0;
+  text-align: center;
+}
+.confirm__modal[open] {
+  animation: 0.2s linear slidein;
+}
+
+.confirm__modal::backdrop {
+  background: rgba(224, 228, 232, 0.9);
+  animation: 0.4s ease fade;
+}
+
+@keyframes slidein {
+    from {
+        transform: translate3d(0, 5px, 0);
+    }
+    to {
+        transfrom: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .3;
+    }
+    to {
+        opacity: 1;
+    }
+}

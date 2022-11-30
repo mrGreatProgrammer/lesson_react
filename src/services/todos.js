@@ -29,9 +29,16 @@ export const todosApi = createApi({
       }),
       invalidatesTags: [{ type: 'Post', id: 'LIST' }]
     }),
+    deleteTodo: builder.mutation({
+      query: ({ todoId }) => ({
+        url: `todo/${todoId}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: [{ type: 'Post', id: 'LIST' }]
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetTodosByLimitQuery, useAddTodoMutation } = todosApi;
+export const { useGetTodosByLimitQuery, useAddTodoMutation, useDeleteTodoMutation } = todosApi;
