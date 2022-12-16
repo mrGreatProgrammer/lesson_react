@@ -23,6 +23,7 @@ import SearchUsers from "./components/Searchers/SearchUsers/SearchUsers";
 import Friends from "./components/Friends/Friends";
 import About from "./pages/About/About";
 import Todos from "./components/Todos/Todos";
+import TechTask from "./components/ui/TechTask/TechTask";
 // import RequireAuth from "./hoc/RequireAuth";
 // import CreatePost from "./pages/CreatePost/CreatePost";
 // import { routes } from "./pages/Routes/Routes";
@@ -144,6 +145,8 @@ function App() {
           </Route>
           <Route path={`/search_comments`} element={<SearchComments />} />
           <Route path={`/todos`} element={<Todos />} />
+          <Route path={`/techTask`} element={<TechTask />} />
+          
           <Route
             path={`*`}
             element={
