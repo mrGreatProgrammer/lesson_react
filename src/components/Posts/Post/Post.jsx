@@ -2,12 +2,20 @@ import React from "react";
 import { CommentIcon } from "../../../imgs/icons";
 import "./Post.css";
 import { Link } from 'react-router-dom';
+import { useInView } from "react-intersection-observer";
 
 const Post = ({ postId, userId, title, postBody }) => {
 const [pi, setPi] = React.useState(postId);
+const { ref, inView, entry } = useInView({
+  /* Optional options */
+  threshold: .7,
+});
 
   return (
-    <div className="post">
+    <div ref={ref} className="post">
+
+      {inView ? <div>
+
       <div className="post__header">
         <div className="post__user">{userId}</div>
         <div className="post__title__container">
@@ -26,6 +34,9 @@ const [pi, setPi] = React.useState(postId);
           comments
           </Link>
       </div>
+      </div>: <div className="sceleton animate-pulse">
+
+      </div> }
     </div>
   );
 };
